@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/three.min.js"></script>
+	
+</head>
+<body>
+	
+	<script>
+		var scene = new THREE.Scene();
+		var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+		var renderer = new THREE.WebGLRenderer();
+		renderer.setSize(window.innerWidth, window.innerHeight);
+
+		document.body.appendChild(renderer.domElement);
+
+		function update() {
+
+		}
+
+		function render() {
+			renderer.render(scene, camera);
+		}
+
+		function GameLoop() {
+			requestAnimationFrame(GameLoop);
+			update();
+			render();
+		}
+
+		GameLoop();
+	</script>
+</body>
+</html>
